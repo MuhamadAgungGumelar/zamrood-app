@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TECHNICAL TEST - Frontend Developer - PT Teknologi Pandu Wisata (Pandooin)
 
-## Getting Started
+## Description Test
 
-First, run the development server:
+Membuat aplikasi sederhana yaitu travel app menggunakan next.js dan tailwindcss
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    1. Create a static responsive website using Next.js, Tailwind CSS, React-Query and any additional relevant package.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    2. Design and implement the home page only of an existing website (mobile and desktop view), using the Figma design provided: Design. You can see deployed version in https://zamrood.com as reference.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    3. Utilize the provided APIs to fetch and display the necessary data:
 
-## Learn More
+    - Products: https://pandooin.com/api/zamrood/itinerary?highlight=true
 
-To learn more about Next.js, take a look at the following resources:
+    - Articles: https://pandooin.com/api/zamrood/article
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    4. Deploy your website to a hosting platform of your choice (e.g., Vercel, GitHub Pages).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    5. Submit the link to your GitHub repository and the deployed website for our review.
 
-## Deploy on Vercel
+## Teknologi yang Digunakan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Programming Language": Node.js v20.16.0
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Library: React.js, Daisy Ui, Tailwind CSS
+
+Framework: Next.js
+
+Fetch API Tools: React Query
+
+## Panduan Penggunaan Aplikasi
+
+### 1. Clone Repository
+
+    https://github.com/MuhamadAgungGumelar/zamrood-app.git
+
+### 2. Install Dependencie
+
+    npm install
+
+### 3. Menjalankan Aplikasi
+
+    npm run dev
+
+### 4. Mengakses website next.js
+
+    http://localhost:3000
