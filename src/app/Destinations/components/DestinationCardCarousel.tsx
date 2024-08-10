@@ -11,7 +11,17 @@ const albertSans = Albert_Sans({
   weight: ["400", "700"],
 });
 
-export default function DestinationCarouselCard({ title, price, image }) {
+interface DestinationCarouselCardProps {
+  title: string;
+  price: string;
+  image: string;
+}
+
+export default function DestinationCarouselCard({
+  title,
+  price,
+  image,
+}: DestinationCarouselCardProps) {
   return (
     <>
       <div className="flex flex-row relative">

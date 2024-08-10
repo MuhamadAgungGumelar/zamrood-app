@@ -6,6 +6,26 @@ import { useQuery } from "@tanstack/react-query";
 import fetchProductsData from "./Api/fetchProductsData";
 import DestinationCarousel from "./components/DestinationCarousel";
 
+// Define the types for the data structure returned by fetchProductsData
+interface Gallery {
+  src: string;
+}
+
+interface RelatedVariant {
+  itinerary_variant_pub_price: string;
+}
+
+interface DestinationData {
+  itinerary_name: string;
+  itinerary_short_description: string;
+  related_galleries: Gallery[];
+  related_variant: RelatedVariant;
+}
+
+interface FetchProductsResponse {
+  data: DestinationData[];
+}
+
 const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["700"],
@@ -17,7 +37,7 @@ const albertSans = Albert_Sans({
 });
 
 export default function Destinations() {
-  const { data, isError, isLoading } = useQuery({
+  const { data, isError, isLoading } = useQuery<FetchProductsResponse>({
     queryKey: ["itineraries"],
     queryFn: fetchProductsData,
   });

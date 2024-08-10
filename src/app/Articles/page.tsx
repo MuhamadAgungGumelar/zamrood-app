@@ -10,6 +10,13 @@ const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["700"],
 });
+
+interface Article {
+  id: string;
+  title: string;
+  featured_image: string;
+}
+
 export default function Articles() {
   const { data, isError, isLoading } = useQuery({
     queryKey: ["id"],
@@ -23,9 +30,9 @@ export default function Articles() {
     return <p>Error fetching data</p>;
   }
 
-  const limitedData = data?.data.slice(1, 5) || [];
+  const limitedData = (data?.data.slice(1, 5) || []) as Article[];
 
-  console.log(data.data[0].title);
+  console.log(data?.data[0].title);
 
   return (
     <>
@@ -35,7 +42,7 @@ export default function Articles() {
             src="/images/BannerKecil.png"
             width={1096}
             height={102}
-            className="lg:hidden "
+            className="lg:hidden"
             alt="Banner Mobile"
           />
           <Image
@@ -61,17 +68,17 @@ export default function Articles() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
             <ArticlesCard
-              key={data.data[0].id}
-              title={data.data[0].title}
-              image={data.data[0].featured_image}
+              key={data?.data[0].id}
+              title={data?.data[0].title}
+              image={data?.data[0].featured_image}
               imageHeight={`h-[649px]`}
               divHeight={`lg:h-44`}
             />
           </div>
           <div className="grid lg:grid-cols-2 gap-4">
-            {limitedData.map((article, key) => (
+            {limitedData.map((article) => (
               <ArticlesCard
-                key={key}
+                key={article.id}
                 title={article.title}
                 image={article.featured_image}
                 imageHeight={`h-auto`}

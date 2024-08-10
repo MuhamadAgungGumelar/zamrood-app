@@ -1,9 +1,21 @@
 import Image from "next/image";
 
-export default function ArticlesCard({ image, title, imageHeight, divHeight }) {
+interface ArticlesCardProps {
+  image: string;
+  title: string;
+  imageHeight: string;
+  divHeight: string;
+}
+
+export default function ArticlesCard({
+  image,
+  title,
+  imageHeight,
+  divHeight,
+}: ArticlesCardProps) {
   return (
     <>
-      <div className={`flex flex-col`}>
+      <div className="flex flex-col">
         <div className={`h-[277px] lg:${imageHeight} relative w-full`}>
           <Image
             fill
@@ -16,7 +28,7 @@ export default function ArticlesCard({ image, title, imageHeight, divHeight }) {
         <div
           className={`relative flex items-center bg-customGreen ${divHeight} p-6 bottom-1`}
         >
-          <h1 className="font-bold text-white text-base ">{title}</h1>
+          <h1 className="font-bold text-white text-base">{title}</h1>
         </div>
       </div>
     </>

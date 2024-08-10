@@ -3,8 +3,26 @@ import { useQuery } from "@tanstack/react-query";
 import fetchProductsData from "../Api/fetchProductsData";
 import DestinationCarouselCard from "./DestinationCardCarousel";
 
+interface Gallery {
+  src: string;
+}
+
+interface RelatedVariant {
+  itinerary_variant_pub_price: string;
+}
+
+interface DestinationData {
+  itinerary_name: string;
+  related_galleries: Gallery[];
+  related_variant: RelatedVariant;
+}
+
+interface FetchProductsResponse {
+  data: DestinationData[];
+}
+
 export default function DestinationCarousel() {
-  const { data, isError, isLoading } = useQuery({
+  const { data, isError, isLoading } = useQuery<FetchProductsResponse>({
     queryKey: ["itineraries"],
     queryFn: fetchProductsData,
   });

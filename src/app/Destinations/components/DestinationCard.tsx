@@ -11,13 +11,21 @@ const albertSans = Albert_Sans({
   weight: ["400", "700"],
 });
 
+interface DestinationCardProps {
+  title: string;
+  description: string;
+  price: string;
+  image: string;
+  index: number;
+}
+
 export default function DestinationCard({
   title,
   description,
   price,
   image,
   index,
-}) {
+}: DestinationCardProps) {
   // Tentukan arah flex berdasarkan indeks
   const flexDirection = index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row";
 
@@ -31,7 +39,7 @@ export default function DestinationCard({
           src={image}
           alt="Discover"
           sizes="100vw"
-          className="rounded-md "
+          className="rounded-md"
         />
       </div>
       <div className="flex-1 flex flex-col justify-between gap-5">
@@ -49,7 +57,7 @@ export default function DestinationCard({
             Organized by Pandooin
           </h1>
           <p
-            className={` text-xs lg:text-base font-normal ${albertSans.className}`}
+            className={`text-xs lg:text-base font-normal ${albertSans.className}`}
           >
             {description}
           </p>
@@ -78,7 +86,7 @@ export default function DestinationCard({
               IDR {price}
             </h1>
           </div>
-          <a className=" flex justify-center items-center border-2 border-customGreenBold hover:bg-customGreenBold hover:text-white hover:cursor-pointer rounded-full px-3 text-base font-bold text-customGreenBold">
+          <a className="flex justify-center items-center border-2 border-customGreenBold hover:bg-customGreenBold hover:text-white hover:cursor-pointer rounded-full px-3 text-base font-bold text-customGreenBold">
             See Details
           </a>
         </div>

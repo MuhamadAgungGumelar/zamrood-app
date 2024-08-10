@@ -1,11 +1,18 @@
-import PropTypes from "prop-types";
+import { FC } from "react";
 import { Unbounded, Albert_Sans } from "next/font/google";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-export default function Features({ Title, Description, SvgComponent }) {
+
+interface FeaturesProps {
+  Title: string;
+  Description: string;
+  SvgComponent: FC;
+}
+
+const Features: FC<FeaturesProps> = ({ Title, Description, SvgComponent }) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center text-center px-10">
@@ -23,10 +30,6 @@ export default function Features({ Title, Description, SvgComponent }) {
       </div>
     </>
   );
-}
-
-Features.propTypes = {
-  Title: PropTypes.string.isRequired,
-  Description: PropTypes.string.isRequired,
-  SvgComponent: PropTypes.elementType.isRequired,
 };
+
+export default Features;
