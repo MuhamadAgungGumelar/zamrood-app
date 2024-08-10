@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Thesignature";
+  src: url("/fonts/Thesignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
