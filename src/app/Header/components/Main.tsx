@@ -16,7 +16,7 @@ export default function Main() {
     <>
       <div className="relative h-screen w-screen overflow-hidden lg:mt-12 lg:bottom-40 z-0">
         <Image
-          src="/images/main.png"
+          src="/images/Main.png"
           alt="Main Image"
           layout="fill"
           objectFit="cover"
